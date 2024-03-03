@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+        <title>
+            Anasayfa
+        </title>
+    {% endblock title %}
+    <!-- BOOSTSRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- MY CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    {% include 'include/_navbar.html' %}
+    <div class="container mt-5">
+    {% block body %}
+      
+    
+    <div class="row">
+        {% for i in ogrenciler %}
+        <div class="col-4">
+            <div class="card mt-3" style="width: 18rem;">
+                <img src="{{i.resim.url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">{{i.isim}} {{i.soyad}}</h5>
+                <p class="card-text">{{i.hakkinda}}</p>
+                <a href="{% url 'detay' i.id %}" class="btn btn-primary">Detaya Git</a>
+                </div>
+            </div>
+          </div>
+          {% endfor %}
+    </div>
+    {% endblock body %}
+</div>
+    <!-- BOOSTSRAP SCRİPT -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

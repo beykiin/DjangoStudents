@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+{% block title %}
+  <title>Kayıt Ol!  </title>
+{% endblock title %}
+{% block body %}
+<form action="" class="mt-5 mb-5 w-50 m-auto bg-secondary-subtle deneme text-center" method="POST">
+    {% csrf_token %}
+
+    {{form.as_div}}
+    <button type="submit" class="btn btn-outline-success w-25 mt-3 h-25 mb-3">Kayıt Ol!</button>
+</form>
+{% endblock body %}

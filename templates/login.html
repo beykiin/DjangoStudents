@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+{% block title %}
+  <title>Login</title>
+{% endblock title %}
+
+{% block body %}
+  <div class="container">
+    <form action="" method="POST" class="w-50 m-auto">
+        {% csrf_token %}
+        <label for="" class="label-control">Kullanıcı Adı: </label>
+        <input type="text" name="username" class="form-control">
+        <label for="" class="label-control">Şifre: </label>
+        <input type="password" name="userpass" class="form-control">
+        <button type="submit" class="btn btn-outline-success">Giriş Yap</button>
+    </form>
+  </div>
+{% endblock body %}

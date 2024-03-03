@@ -1,0 +1,20 @@
+{% extends "index.html" %}
+{% block title %}
+  <title>Filtre</title>
+{% endblock title %}
+{% block body %}
+    <div class="row">
+        {% for i in ogrenciler %}
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{{i.resim.url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">{{i.isim}} {{i.soyad}}</h5>
+                <p class="card-text">{{i.hakkinda}}</p>
+                <a href="{% url 'detay' i.id %}" class="btn btn-primary">Detaya Git</a>
+                </div>
+            </div>
+          </div>
+          {% endfor %}
+    </div>
+    {% endblock body %}

@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+{% block title %}
+  Öğrenci Ekle
+{% endblock title %}
+{% block body %}
+  <form action="" class="w-50 m-auto" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_div}}
+    <div class="text-center mt-3"><button type="submit" class="btn btn-outline-success w-25">Ekle</button></div>
+
+  </form>
+{% endblock body %}
